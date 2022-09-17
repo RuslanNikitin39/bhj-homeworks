@@ -5,29 +5,64 @@ const next = document.querySelector('.slider__arrow_next');
 let numSld = 0;
 
 next.onclick = function() {
-    numSld++;
-    for (let slide of Array.from(slides)) {
-        slide.className = 'slider__item';
-    }
 
-    if (numSld >= slides.length) {
-        numSld = 0;
-    }
+    // numSld++;
+    // for (let slide of Array.from(slides)) {
+    //     slide.className = 'slider__item';
+    // }
 
-    slides[numSld].className = 'slider__item slider__item_active';
+    // if (numSld >= slides.length) {
+    //     numSld = 0;
+    // }
+
+    // slides[numSld].className = 'slider__item slider__item_active';
+
+    changeSlade('next');
 }
 
 prev.onclick = function() {
-    numSld--;
+
+    // numSld--;
     
-    for (let slide of Array.from(slides)) {
-        slide.className = 'slider__item';
-    }
+    // for (let slide of Array.from(slides)) {
+    //     slide.className = 'slider__item';
+    // }
 
-    if (numSld < 0) {
-        numSld = slides.length - 1;
-    }
+    // if (numSld < 0) {
+    //     numSld = slides.length - 1;
+    // }
 
-    slides[numSld].className = 'slider__item slider__item_active';
+    // slides[numSld].className = 'slider__item slider__item_active';
+
+    changeSlade('prev');
 }
 
+function changeSlade(direction) {
+    
+
+    if (direction == 'next') {
+        numSld++;
+        
+        for (let slide of Array.from(slides)) {
+            slide.className = 'slider__item';
+        }
+
+        if (numSld >= slides.length) {
+            numSld = 0;
+        } 
+        
+    } else {
+        numSld--;
+        
+        for (let slide of Array.from(slides)) {
+            slide.className = 'slider__item';
+        }
+
+        if (numSld < 0) {
+            numSld = slides.length - 1;
+        }
+    }
+    
+    
+    slides[numSld].className = 'slider__item slider__item_active';
+}
