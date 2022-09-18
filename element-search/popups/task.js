@@ -17,6 +17,7 @@ for (let btn of btnClose) {
 // };
 
 btnSuccess.onclick = function(){
+    popUp.className = 'modal';
     success.className = 'modal modal_active';
 };
 
