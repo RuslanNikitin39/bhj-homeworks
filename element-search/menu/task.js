@@ -13,7 +13,7 @@ for (let lnk of Array.from(links)) {
             }
         }
 
-        if (lnk.closest('.menu_main')) {
+        if (lnk.closest('.menu_main') && parent.querySelector('.menu_sub')) {
             return false;
         }
     }
