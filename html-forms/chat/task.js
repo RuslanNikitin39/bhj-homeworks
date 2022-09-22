@@ -40,12 +40,14 @@ input.addEventListener('change', (event) => {
         <div class="message message_client">
         <div class="message__time">${getTime()}</div>
         <div class="message__text">${event.target.value}</div>
-    </div>
+         </div>
         `
         event.target.value = "" 
         
         botAnswer(arrMsgs)
         container.scrollTo(0, container.scrollHeight)
+
+        flg = 1
     }   
 })
 
@@ -64,7 +66,5 @@ tm = setInterval(() => {
     if(flg){
         botAnswer(arrMsgs)
         container.scrollTo(0, container.scrollHeight)
-    } else {
-        flg = 1
     }
 }, 10000, flg);
