@@ -47,7 +47,6 @@ input.addEventListener('change', (event) => {
         botAnswer(arrMsgs)
         container.scrollTo(0, container.scrollHeight)
 
-        flg = 1
     }   
 })
 
@@ -66,5 +65,7 @@ tm = setInterval(() => {
     if(flg){
         botAnswer(arrMsgs)
         container.scrollTo(0, container.scrollHeight)
+    } else {
+        flg = 1
     }
-}, 10000, flg);
+}, 30000, flg);
